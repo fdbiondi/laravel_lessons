@@ -2,17 +2,20 @@
 
 @section('content')
     <h2>Notes</h2>
-    <a href="{{ url('notes/create') }}">Add a note</a>
+    <p>
+        <a href="{{ url('notes/create') }}">Add a note</a>
+    </p>
     <ul>
         @foreach($notes as $note)
             <li>
-                @if(strlen($note->note)>50)
+                {{--@if(strlen($note->note)>50)
                     {{ substr($note->note , 0 , 50) }}...
-                @else
+                @else--}}
                     {{ $note->note }}
-                @endif
+                {{--@endif--}}
             </li>
         @endforeach
     </ul>
+    {!! $notes->render() !!}
 
 @endsection
