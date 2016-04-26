@@ -23,3 +23,5 @@ Route::post('notes', 'NotesController@store');
 Route::get('notes/create', 'NotesController@create');
 
 Route::get('note/{note}', 'NotesController@show')->where('note','[0-9]+');
+
+Route::get('view/{note}', 'NotesController@view');

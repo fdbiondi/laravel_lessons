@@ -35,4 +35,10 @@ class NotesController extends Controller
     public function show($note){
         dd($note);
     }
+
+    public function view($id){
+        $note = Note::find($id);
+
+        dd($note->note);
+    }
 }
