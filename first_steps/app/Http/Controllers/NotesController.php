@@ -33,12 +33,11 @@ class NotesController extends Controller
     }
 
     public function show($note){
-        dd($note);
-    }
 
-    public function view($id){
-        $note = Note::find($id);
+        $note = Note::findOrFail($note);
 
-        dd($note->note);
+        //view('notes/details', ['note'=>$note]);
+        //view('notes/details', compact('note'));
+        return view('notes/details')->with('note', $note);
     }
 }

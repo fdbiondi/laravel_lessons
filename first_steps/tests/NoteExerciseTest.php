@@ -9,10 +9,10 @@ class NoteExerciseTest extends TestCase
 
     public function test_notes_summary_and_notes_details()
     {
-        $text = "Begin of the Note. eligendi molestiae autem. Ut deleniti optio eius doloremque et aspernatur. Eius officiis placeat iste molestiae optio commodi blanditiis.";
-        $text .= "End of the note";
+        $text = 'Begin of the note. Sit placeat voluptas ut sunt. Nostrum fugit perferendis ut. Commodi ducimus optio earum nemo doloribus iste eos facere.';
+        $text .= 'End of the note';
 
-        $note = Note::create(['note'=>$text]);
+        $note = Note::create(['note' => $text ]);
 
         $this->visit('notes')
             ->see('Begin of the note')
@@ -20,6 +20,7 @@ class NoteExerciseTest extends TestCase
             ->dontSee('End of the note')
             ->seeLink('View note')
             ->click('View note')
-            ->see($text);
+            ->see($text)
+            ->seeLink('View all notes', 'notes');
     }
 }
