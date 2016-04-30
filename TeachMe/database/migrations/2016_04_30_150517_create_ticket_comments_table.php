@@ -17,7 +17,7 @@ class CreateTicketCommentsTable extends Migration {
 			$table->increments('id');
 
             $table->mediumText('comment');
-            $table->string('link')->nullable;
+            $table->string('link')->nullable();
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
