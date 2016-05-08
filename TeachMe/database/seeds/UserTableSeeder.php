@@ -3,8 +3,8 @@
 use Faker\Generator;
 use TeachMe\Entities\User;
 
-class UserTableSeeder extends BaseSeeder{
-
+class UserTableSeeder extends BaseSeeder
+{
     public function getModel()
     {
         return new User();
@@ -28,10 +28,9 @@ class UserTableSeeder extends BaseSeeder{
     private function createAdmin()
     {
         $this->create([
-            'name'=>'Federico Biondi',
-            'email'=>'fdbion@gmail.com',
-            'password'=>bcrypt('1454710050'),
+            'name' => 'Federico Biondi',
+            'email' => 'fdbion@gmail.com',
+            'password' => bcrypt('1454710050'),
         ]);
     }
-
 }

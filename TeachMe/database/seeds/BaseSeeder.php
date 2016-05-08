@@ -6,18 +6,19 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
 use League\Flysystem\Exception;
 
-abstract class BaseSeeder extends Seeder{
-
+abstract class BaseSeeder extends Seeder
+{
     protected $total = 50;
     protected static $pool = array();
 
-    public function run(){
+    public function run()
+    {
         $this->createMultiple($this->total);
     }
 
     protected function createMultiple($total, array $customValues = array())
     {
-        for ($i = 1; $i <= $total; $i++) {
+        for ($i = 1; $i <= $total; ++$i) {
             $this->create($customValues);
         }
     }
@@ -39,9 +40,9 @@ abstract class BaseSeeder extends Seeder{
         return $seeder->create($customValues);
     }*/
 
-    protected function getRandom($model){
-        if( ! $this->collectionExist($model) )
-        {
+    protected function getRandom($model)
+    {
+        if (!$this->collectionExist($model)) {
             throw new Exception("The $model collection does not exist");
         }
 
@@ -53,8 +54,7 @@ abstract class BaseSeeder extends Seeder{
         $reflection = new ReflectionClass($entity);
         $class = $reflection->getShortName();
 
-        if(!$this->collectionExist($class))
-        {
+        if (!$this->collectionExist($class)) {
             static::$pool[$class] = new Collection();
         }
 
@@ -65,6 +65,7 @@ abstract class BaseSeeder extends Seeder{
 
     /**
      * @param $class
+     *
      * @return bool
      */
     private function collectionExist($class)

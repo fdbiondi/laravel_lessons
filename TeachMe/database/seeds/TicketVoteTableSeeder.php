@@ -3,8 +3,8 @@
 use Faker\Generator;
 use TeachMe\Entities\TicketVote;
 
-class TicketVoteTableSeeder extends BaseSeeder{
-
+class TicketVoteTableSeeder extends BaseSeeder
+{
     protected $total = 250;
 
     public function getModel()
@@ -16,7 +16,7 @@ class TicketVoteTableSeeder extends BaseSeeder{
     {
         return [
             'user_id' => $this->getRandom('User')->id,
-            'ticket_id' => $this->getRandom('Ticket')->id
+            'ticket_id' => $this->getRandom('Ticket')->id,
         ];
     }
 }
