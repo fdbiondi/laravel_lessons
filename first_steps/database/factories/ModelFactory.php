@@ -20,8 +20,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Note::class, function (Faker\Generator $faker){
+$factory->define(App\Note::class, function (Faker\Generator $faker) {
     return[
-        'note' => $faker->paragraph
+        'note' => $faker->paragraph,
     ];
 });

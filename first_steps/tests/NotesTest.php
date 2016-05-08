@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-
 use App\Note;
 
 class NotesTest extends TestCase
@@ -35,8 +34,8 @@ class NotesTest extends TestCase
             ->press('Create note')
             ->seePageIs('notes')
             ->see('A new note')
-            ->seeInDatabase('notes',[
-                'note'=>'A new note'
+            ->seeInDatabase('notes', [
+                'note' => 'A new note',
             ]);
     }
 }

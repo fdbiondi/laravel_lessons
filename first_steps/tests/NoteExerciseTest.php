@@ -12,7 +12,7 @@ class NoteExerciseTest extends TestCase
         $text = 'Begin of the note. Sit placeat voluptas ut sunt. Nostrum fugit perferendis ut. Commodi ducimus optio earum nemo doloribus iste eos facere.';
         $text .= 'End of the note';
 
-        $note = Note::create(['note' => $text ]);
+        $note = Note::create(['note' => $text]);
 
         $this->visit('notes')
             ->see('Begin of the note')
