@@ -2,7 +2,6 @@
 
 use Faker\Generator;
 use TeachMe\Entities\User;
-use Faker\Factory as Faker;
 
 class UserTableSeeder extends BaseSeeder{
 
