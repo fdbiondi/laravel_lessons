@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ca6a80e81e3ced4b9f91c286565c8686",
-    "content-hash": "f228bfadc598f1ee7f31ba512b723cd6",
+    "hash": "b153ae5a425f0d2ae35db79d02a1fa0b",
+    "content-hash": "82f66d5b373512d8fc68fc9d786507f2",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -589,6 +589,56 @@
             "time": "2016-02-02 14:55:52"
         },
         {
+            "name": "laravelcollective/html",
+            "version": "v5.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
+                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/routing": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "time": "2015-05-06 14:23:37"
+        },
+        {
             "name": "league/flysystem",
             "version": "1.0.22",
             "source": {
@@ -1044,16 +1094,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.1",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421"
+                "reference": "d8db871a54619458a805229a057ea2af33c753e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0697e6aa65c83edf97bb0f23d8763f94e3f11421",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/d8db871a54619458a805229a057ea2af33c753e8",
+                "reference": "d8db871a54619458a805229a057ea2af33c753e8",
                 "shasum": ""
             },
             "require": {
@@ -1093,7 +1143,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2015-06-06 14:19:39"
+            "time": "2016-05-01 08:45:47"
         },
         {
             "name": "symfony/console",
@@ -1216,16 +1266,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.4",
+            "version": "v2.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "47d2d8cade9b1c3987573d2943bb9352536cdb87"
+                "reference": "a158f13992a3147d466af7a23b564ac719a4ddd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/47d2d8cade9b1c3987573d2943bb9352536cdb87",
-                "reference": "47d2d8cade9b1c3987573d2943bb9352536cdb87",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/a158f13992a3147d466af7a23b564ac719a4ddd8",
+                "reference": "a158f13992a3147d466af7a23b564ac719a4ddd8",
                 "shasum": ""
             },
             "require": {
@@ -1272,20 +1322,20 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-07 14:04:32"
+            "time": "2016-05-03 18:59:18"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.8.4",
+            "version": "v2.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "f08ffdf229252cd2745558cb2112df43903bcae4"
+                "reference": "dee379131dceed90a429e951546b33edfe7dccbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/f08ffdf229252cd2745558cb2112df43903bcae4",
-                "reference": "f08ffdf229252cd2745558cb2112df43903bcae4",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/dee379131dceed90a429e951546b33edfe7dccbb",
+                "reference": "dee379131dceed90a429e951546b33edfe7dccbb",
                 "shasum": ""
             },
             "require": {
@@ -1321,7 +1371,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-27 10:20:16"
+            "time": "2016-04-12 18:01:21"
         },
         {
             "name": "symfony/finder",
@@ -2727,16 +2777,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.5",
+            "version": "1.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf"
+                "reference": "2292b116f43c272ff4328083096114f84ea46a56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
-                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/2292b116f43c272ff4328083096114f84ea46a56",
+                "reference": "2292b116f43c272ff4328083096114f84ea46a56",
                 "shasum": ""
             },
             "require": {
@@ -2773,7 +2823,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-02-26 18:40:46"
+            "time": "2016-05-04 07:59:13"
         },
         {
             "name": "sebastian/exporter",
@@ -2982,7 +3032,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.4",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
