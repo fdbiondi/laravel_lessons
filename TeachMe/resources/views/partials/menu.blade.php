@@ -1,14 +1,8 @@
-<!--<ul class="nav navbar-nav">
-    <li role="presentation">
-        <a href="http://teachme.app">Recientes</a>
-    </li>
-    <li role="presentation">
-        <a href="http://teachme.app/populares">Populares</a>
-    </li>
-    <li role="presentation">
-        <a href="http://teachme.app/pendientes">Abiertas</a>
-    </li>
-    <li role="presentation">
-        <a href="http://teachme.app/tutoriales">Finalizadas</a>
-    </li>
-</ul>-->
+<ul class="nav navbar-nav">
+    @foreach($items as $route => $text)
+        <li role="presentation" {!! Html::classes(['active' => Route::is($route)]) !!}>
+            <a href="{{ route($route) }}">{{ $text }}</a>
+        </li>
+    @endforeach
+</ul>
+
