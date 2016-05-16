@@ -23,7 +23,6 @@ class TicketsController extends Controller {
     public function open()
     {
         $tickets = Ticket::where('status','open')->orderBy('created_at', 'DESC')->paginate();
-
         return view('tickets.list', compact('tickets'));
     }
 
