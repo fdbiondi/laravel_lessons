@@ -31,10 +31,10 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-    
+
     public function tickets()
     {
-        $this->hasMany(Ticket::getClass());
+        return $this->hasMany(Ticket::getClass());
     }
     
     public function voted()

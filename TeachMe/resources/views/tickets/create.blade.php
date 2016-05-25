@@ -4,16 +4,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h1>
-                    Nueva solicitud
-                    {!! Form::open(['route' => 'tickets.store', 'method' => 'POST']) !!}
-                        <p>
-                            <button type="submit" class="btn btn-primary">
-                                Enviar solicitud
-                            </button>
-                        </p>
-                    {!! Form::close() !!}
-                </h1>
+                <h1>Nueva solicitud</h1>
+                @include('partials.errors')
+                {!! Form::open(['route' => 'tickets.store', 'method' => 'POST']) !!}
+                    <div class="form-group">
+                        {!! Form::label('title', 'Titulo') !!}
+                        {!! Form::textarea('title', null, [
+                            'rows' => 2,
+                            'class' => 'form-control',
+                            'placeholder' => 'Describe brevemente de qué quieres que se trate el tutorial']) !!}
+                    </div>
+                    <p>
+                        <button type="submit" class="btn btn-primary">
+                            Enviar solicitud
+                        </button>
+                    </p>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
