@@ -131,7 +131,7 @@ return [
         'hour'                  => 'hora',
         'minute'                => 'minuto',
         'second'                => 'segundo',
-        'title'                 => 'título',
+        'title'                 => 'Título',
         'body'                  => 'contenido',
         'description'           => 'descripción',
         'excerpt'               => 'extracto',
@@ -139,6 +139,8 @@ return [
         'time'                  => 'hora',
         'subject'               => 'asunto',
         'message'               => 'mensaje',
+        'comment'               => 'Comentarios',
+        'link'                  => 'Enlace',
     ],
 
 ];
