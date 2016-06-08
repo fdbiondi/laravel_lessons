@@ -49,6 +49,14 @@ class TicketRepository extends BaseRepository
             ->paginate(20);
     }
 
+    public function openNew($user, $title)
+    {
+        return $user->tickets()->create([
+            'title'  => $title,
+            'status' => 'open'
+        ]);
+    }
+
     /*public function getComments($id)
     {
         return $this->selectTicketComments($id);
