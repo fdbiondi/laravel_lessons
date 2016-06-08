@@ -6,18 +6,18 @@ use TeachMe\Http\Requests;
 use TeachMe\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use TeachMe\Repositories\CommentRepository;
 use TeachMe\Repositories\TicketRepository;
 
 class TicketsController extends Controller {
 
-    /**
-     * @var TicketRepository
-     */
-    private $ticketRepository;
+    protected $ticketRepository;
+    protected $commentRepository;
 
-    public function __construct(TicketRepository $ticketRepository)
+    public function __construct(TicketRepository $ticketRepository, CommentRepository $commentRepository)
     {
         $this->ticketRepository = $ticketRepository;
+        $this->commentRepository = $commentRepository;
     }
 
     public function latest()
@@ -47,8 +47,8 @@ class TicketsController extends Controller {
     public function details($id)
     {
         $ticket = $this->ticketRepository->findOrFail($id);
-        //$comments = $this->ticketRepository->getComments($id);
-        return view('tickets.details', compact('ticket'), compact('comments'));
+        $comments = $this->commentRepository->paginateLatest($id);
+        return view('tickets.details', compact('ticket', 'comments'));
     }
 
     public function create()

@@ -3,7 +3,6 @@
 namespace TeachMe\Repositories;
 
 use TeachMe\Entities\Ticket;
-use TeachMe\Entities\TicketComment;
 
 class TicketRepository extends BaseRepository
 {
@@ -20,11 +19,6 @@ class TicketRepository extends BaseRepository
             . '( SELECT COUNT(*) FROM ticket_votes WHERE ticket_votes.ticket_id = tickets.id) as num_votes'
         )->with('author');
     }
-
-    /*protected function selectTicketComments($ticket_id)
-    {
-        return TicketComment::where('ticket_id', $ticket_id)->with('user')->get();
-    }*/
 
     public function paginateLatest()
     {
@@ -56,9 +50,4 @@ class TicketRepository extends BaseRepository
             'status' => 'open'
         ]);
     }
-
-    /*public function getComments($id)
-    {
-        return $this->selectTicketComments($id);
-    }*/
 }

@@ -20,4 +20,20 @@ class CommentRepository extends BaseRepository
         $ticket->comments()->save($comment);
     }
 
+    protected function selectCommentsList()
+    {
+        return $this->newQuery()->selectRaw(
+            'ticket_comments.*, '
+            . '( SELECT name FROM users WHERE ticket_comments.user_id = users.id) as user_name'
+        );
+    }
+
+    public function paginateLatest($ticket_id)
+    {
+        return $this->selectCommentsList()
+            ->where('ticket_id', $ticket_id)
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
+    }
+
 }

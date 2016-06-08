@@ -61,11 +61,11 @@
                 <button type="submit" class="btn btn-primary">Enviar comentario</button>
             {!!  Form::close() !!}
 
-            <h3>Comentarios ({{ count($ticket->comments) }})</h3>
+            <h3>Comentarios ({{ count($comments) }})</h3>
 
-            @foreach($ticket->comments as $comment)
+            @foreach($comments as $comment)
                 <div class="well well-sm">
-                    <p><strong>{{ $comment->user->name }}</strong></p>
+                    <p><strong>{{ $comment->user_name }}</strong></p>
                     <p>{{ $comment->comment }}</p>
                     @if($comment->link)
                         <p>
