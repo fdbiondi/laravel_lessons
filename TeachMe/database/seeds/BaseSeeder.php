@@ -51,6 +51,7 @@ abstract class BaseSeeder extends Seeder
 
     private function addToPool($entity)
     {
+        //Obtain the class name without the namespace
         $reflection = new ReflectionClass($entity);
         $class = $reflection->getShortName();
 

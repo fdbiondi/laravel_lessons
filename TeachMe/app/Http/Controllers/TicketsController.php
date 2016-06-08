@@ -48,7 +48,8 @@ class TicketsController extends Controller {
     public function details($id)
     {
         $ticket = $this->ticketRepository->findOrFail($id);
-        return view('tickets.details', compact('ticket'));
+        //$comments = $this->ticketRepository->getComments($id);
+        return view('tickets.details', compact('ticket'), compact('comments'));
     }
 
     public function create()
@@ -67,11 +68,11 @@ class TicketsController extends Controller {
             'status' => 'open'
         ]);
         /*
-                $ticket = new Ticket();
-                $ticket->title = $request->get('title');
-                $ticket->status = 'open';
-                $ticket->user_id = $auth->user()->id;
-                $ticket->save();*/
+        $ticket = new Ticket();
+        $ticket->title = $request->get('title');
+        $ticket->status = 'open';
+        $ticket->user_id = $auth->user()->id;
+        $ticket->save();*/
 
         return Redirect::route('tickets.details', $ticket->id);
     }
