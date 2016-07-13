@@ -1,9 +1,10 @@
 <?php
 
 use Faker\Generator;
+use Styde\Seeder\Seeder;
 use TeachMe\Entities\TicketComment;
 
-class TicketCommentTableSeeder extends BaseSeeder
+class TicketCommentTableSeeder extends Seeder
 {
     public function getModel()
     {
@@ -15,8 +16,8 @@ class TicketCommentTableSeeder extends BaseSeeder
         return [
             'comment' => $faker->paragraph(),
             'link' => $faker->randomElement(['', '', $faker->url]),
-            'user_id' => $this->getRandom('User')->id,
-            'ticket_id' => $this->getRandom('Ticket')->id,
+            'user_id' => $this->random('User')->id,
+            'ticket_id' => $this->random('Ticket')->id,
         ];
     }
 }

@@ -1,8 +1,9 @@
 <?php
 
 use TeachMe\Entities\Ticket;
+use Styde\Seeder\Seeder;
 
-class TicketTableSeeder extends BaseSeeder
+class TicketTableSeeder extends Seeder
 {
     public function getModel()
     {
@@ -15,7 +16,7 @@ class TicketTableSeeder extends BaseSeeder
             'title' => $faker->sentence(),
             'status' => $faker->randomElement(['open', 'open', 'closed']),
             //'user_id' => $this->createFrom('UserTableSeeder')->id
-            'user_id' => $this->getRandom('User')->id,
+            'user_id' => $this->random('User')->id,
         ];
     }
 }

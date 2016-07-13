@@ -2,8 +2,9 @@
 
 use Faker\Generator;
 use TeachMe\Entities\User;
+use Styde\Seeder\Seeder;
 
-class UserTableSeeder extends BaseSeeder
+class UserTableSeeder extends Seeder
 {
     public function getModel()
     {
