@@ -6,7 +6,7 @@ class Ticket extends Entity
 {
     protected $table = 'tickets';
 
-    protected $fillable = ['title', 'status'];
+    protected $fillable = ['title', 'link', 'status'];
 
     public function author()
     {
