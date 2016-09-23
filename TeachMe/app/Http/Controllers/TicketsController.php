@@ -1,5 +1,6 @@
 <?php namespace TeachMe\Http\Controllers;
 
+
 use Illuminate\Support\Facades\Redirect;
 use TeachMe\Entities\Ticket;
 use TeachMe\Http\Requests;
@@ -77,5 +78,13 @@ class TicketsController extends Controller {
         $ticket->save();*/
 
         return Redirect::route('tickets.details', $ticket->id);
+    }
+
+    public function select($ticketId, $commentId) {
+        $ticket = $this->ticketRepository->findOrFail($ticketId);
+
+        $ticket->assignResource($commentId);
+
+        return Redirect::back();
     }
 }
