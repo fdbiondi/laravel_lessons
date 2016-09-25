@@ -4,12 +4,14 @@ namespace TeachMe\Entities;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 
-class User extends Entity implements AuthenticatableContract, CanResetPasswordContract
+class User extends Entity implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
-    use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword, Authorizable;
 
     /**
      * The database table used by the model.
@@ -46,5 +48,13 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
     {
         return $this->voted()->where('ticket_id', $ticket->id)->count();
         //return TicketVote::where(['user_id' => $this->id, 'ticket_id' => $ticket->id])->count();
+    }
+
+    public function isAuthor($ticket) {
+        return $this->id == $ticket->user_id;
+    }
+
+    public function isAdmin() {
+        return $this->role === 'admin';
     }
 }
