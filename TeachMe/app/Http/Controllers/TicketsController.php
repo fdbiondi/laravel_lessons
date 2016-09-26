@@ -30,7 +30,9 @@ class TicketsController extends Controller {
 
     public function popular()
     {
-        return view('tickets.list');
+        $tickets = $this->ticketRepository->paginatePopular();
+
+        return view('tickets.list', compact('tickets'));
     }
 
     public function open()

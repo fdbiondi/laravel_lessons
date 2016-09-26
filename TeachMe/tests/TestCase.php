@@ -2,6 +2,7 @@
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
+	protected $baseUrl = 'http://teachme.app';
 	/**
 	 * Creates the application.
 	 *

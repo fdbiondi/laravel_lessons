@@ -11,19 +11,35 @@ class TicketRepository extends BaseRepository
         return new Ticket();
     }
 
+    protected function getCountTicketCommentsQuery() {
+        return '( SELECT COUNT(*) FROM ticket_comments WHERE ticket_comments.ticket_id = tickets.id)';
+    }
+
+    protected function getCountTicketVotesQuery() {
+        return '( SELECT COUNT(*) FROM ticket_votes WHERE ticket_votes.ticket_id = tickets.id)';
+    }
+
     protected function selectTicketsList()
     {
         return $this->newQuery()->selectRaw(
             'tickets.*, '
-            . '( SELECT COUNT(*) FROM ticket_comments WHERE ticket_comments.ticket_id = tickets.id) as num_comments,'
-            . '( SELECT COUNT(*) FROM ticket_votes WHERE ticket_votes.ticket_id = tickets.id) as num_votes'
+            . $this->getCountTicketCommentsQuery() . ' as num_comments,'
+            . $this->getCountTicketVotesQuery() . ' as num_votes'
         )->with('author');
     }
 
     public function paginateLatest()
     {
         return $this->selectTicketsList()
+            ->orderBy('num_votes', 'DESC')
+            ->paginate(20);
+    }
+
+    public function paginatePopular()
+    {
+        return $this->selectTicketsList()
             ->orderBy('created_at', 'DESC')
+            ->whereRaw($this->getCountTicketVotesQuery() . ' >= 10')
             ->paginate(20);
     }
 

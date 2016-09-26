@@ -51,7 +51,7 @@ class User extends Entity implements AuthenticatableContract, AuthorizableContra
     }
 
     public function isAuthor($ticket) {
-        return $this->id == $ticket->user_id;
+        return $this->id === $ticket->user_id;
     }
 
     public function isAdmin() {
